@@ -1,5 +1,5 @@
-// import { getAccessToken } from '@/features/auth/storages/token.storage'
 import { ApiError, type ApiErrorResponse } from '@/infra/http/api-error'
+import { getAccessToken } from '@/features/auth/storages/token.storage'
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -26,7 +26,7 @@ export const http = {
   },
   post: async <ResponseType>(
     endPoint: string,
-    body: any,
+    body: unknown,
   ): Promise<ResponseType> => {
     const finalUrl = buildUrl(endPoint)
     const response = await fetchWithToken(finalUrl, {
