@@ -1,4 +1,4 @@
-import { useAuth } from '@/features/auth/contexts/AuthContext'
+import { useAuth } from '@/features/auth/contexts/useAuth'
 import {
   loginSchema,
   type LoginFormData,
@@ -14,7 +14,7 @@ export function useFormLogin() {
   const [showPass, setShowPass] = useState<boolean>(false)
   const [authError, setAuthError] = useState<string | null>(null)
   const navigate = useNavigate()
-  const {setAuthUser} = useAuth()
+  const { setAuthUser } = useAuth()
 
   const {
     register,
@@ -29,7 +29,6 @@ export function useFormLogin() {
     setAuthError(null)
 
     try {
-
       const responseData = await loginUser(data)
       setAuthUser(responseData.user)
       navigate('/feed')
