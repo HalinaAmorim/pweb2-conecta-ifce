@@ -3,7 +3,7 @@ import PublicLayout from '@/layouts/PublicLayout'
 
 import HomePage from '@/pages/homepage/HomePage'
 import LoginPage from '@/pages/LoginPage'
-// import RegisterPage from '@/pages/RegisterPage'
+import RegisterPage from '@/pages/RegisterPage'
 import { createBrowserRouter } from 'react-router'
 
 export const router = createBrowserRouter([
@@ -18,18 +18,14 @@ export const router = createBrowserRouter([
         path: '/login',
         Component: LoginPage,
       },
-      // {
-      //   path: 'register',
-      //   Component: RegisterPage,
-      // },
-
-
+      {
+        path: 'register',
+        Component: RegisterPage,
+      },
     ],
   },
   {
     Component: AppLayout,
-    children: [
-      
-    ],
+    children: [],
   },
 ])
