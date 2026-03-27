@@ -6,7 +6,7 @@ import {
   CheckCircle2Icon,
   EyeIcon,
   EyeOffIcon,
-  Loader2Icon
+  Loader2Icon,
 } from 'lucide-react'
 import { Link, useLocation } from 'react-router'
 import { useFormLogin } from './useFormLogin'
@@ -18,14 +18,11 @@ export function FormLogin() {
     useForm: { register, handleSubmit, isSubmitting, isValid, errors },
   } = useFormLogin()
 
-
   const location = useLocation()
   const successMessage = location.state?.message
 
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-
-
       {successMessage && (
         <div className="flex items-center gap-2 rounded-md bg-emerald-500/15 p-3 text-sm text-emerald-600 dark:text-emerald-400">
           <CheckCircle2Icon className="size-4 shrink-0" />
@@ -85,7 +82,6 @@ export function FormLogin() {
           <p className="text-xs text-destructive">{errors.password.message}</p>
         )}
       </div>
-
 
       {authError && (
         <div className="flex items-center gap-2 rounded-md bg-destructive/15 p-3 text-sm text-destructive">

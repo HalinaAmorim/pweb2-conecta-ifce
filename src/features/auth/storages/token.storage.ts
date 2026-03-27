@@ -14,8 +14,4 @@ function clearAccessToken() {
   localStorage.removeItem(KEY_TOKEN)
 }
 
-export {
-  setAccessToken,
-  getAccessToken,
-  clearAccessToken,
-}
+export { setAccessToken, getAccessToken, clearAccessToken }
